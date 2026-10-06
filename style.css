@@ -1,0 +1,628 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #164e73 0%,
+            #0f3557 35%,
+            #071a2f 100%
+        );
+
+    color: white;
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    opacity: 0.45;
+
+    animation: starsMove 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        opacity: 0.25;
+    }
+
+    to {
+        opacity: 0.65;
+    }
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+
+.intro-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   AVIÓN
+========================= */
+
+.plane {
+
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(147, 197, 253, 0.8)
+        );
+
+    animation: planeFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes planeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.intro h1 {
+
+    font-size: 4.5rem;
+
+    letter-spacing: 12px;
+
+    font-weight: 600;
+
+    color: #e0f2fe;
+
+    text-shadow:
+        0 0 10px rgba(147, 197, 253, 0.5),
+        0 0 30px rgba(56, 189, 248, 0.3);
+
+    animation: tituloBrillo 3s ease-in-out infinite;
+
+}
+
+
+@keyframes tituloBrillo {
+
+    0%,
+    100% {
+
+        text-shadow:
+            0 0 10px rgba(147, 197, 253, 0.5),
+            0 0 30px rgba(56, 189, 248, 0.3);
+
+    }
+
+    50% {
+
+        text-shadow:
+            0 0 18px rgba(147, 197, 253, 0.8),
+            0 0 45px rgba(56, 189, 248, 0.5);
+
+    }
+
+}
+
+
+/* =========================
+   LÍNEA DECORATIVA
+========================= */
+
+.line {
+
+    width: 150px;
+
+    height: 1px;
+
+    margin: 22px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #93c5fd,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(147, 197, 253, 0.5);
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.intro p {
+
+    color: #cbd5e1;
+
+    font-size: 1.1rem;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+button {
+
+    border: 1px solid rgba(147, 197, 253, 0.5);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #e0f2fe;
+
+    padding: 14px 34px;
+
+    border-radius: 30px;
+
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s,
+        background 0.3s,
+        box-shadow 0.3s;
+}
+
+
+button:hover {
+
+    transform: scale(1.07);
+
+    background:
+        rgba(147, 197, 253, 0.15);
+
+    box-shadow:
+        0 0 25px rgba(96, 165, 250, 0.3);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+
+        font-size: 2.5rem;
+
+        letter-spacing: 6px;
+    }
+
+    .intro p {
+
+        font-size: 0.95rem;
+    }
+
+    .plane {
+
+        font-size: 2.5rem;
+    }
+
+}
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+
+    position: fixed;
+
+    inset: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 40px 20px 80px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    z-index: 4;
+}
+
+
+.paper {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 850px;
+
+    min-height: 600px;
+
+    padding: 65px 75px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef6fb
+        );
+
+    color: #1e293b;
+
+    border-radius: 8px;
+
+    box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+
+    0 0 25px rgba(96, 165, 250, 0.18),
+
+    0 0 60px rgba(56, 189, 248, 0.10);
+
+    border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+
+/* =========================
+   TÍTULO DE LA CARTA
+========================= */
+
+.paper h2 {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+    font-family: Georgia, serif;
+
+    font-size: 2.2rem;
+
+    font-weight: 500;
+
+    color: #164e73;
+
+text-shadow:
+    0 0 12px rgba(56, 189, 248, 0.20);
+
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+.letter-content {
+
+    font-family: Georgia, serif;
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+    color: #334155;
+
+    text-align: left;
+
+}
+
+
+.letter-content p {
+
+    margin-bottom: 22px;
+
+}
+
+
+.letter-content p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================
+   FIRMA
+========================= */
+
+.signature {
+
+    margin-top: 35px;
+
+    text-align: right;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    color: #164e73;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   DECORACIONES
+========================= */
+
+.paper-decoration {
+
+    position: absolute;
+
+    color: #3b82f6;
+
+    font-size: 1.4rem;
+
+    opacity: 0.7;
+
+}
+
+
+.top-left {
+
+    top: 20px;
+
+    left: 25px;
+}
+
+
+.top-right {
+
+    top: 20px;
+
+    right: 25px;
+}
+
+
+.bottom-left {
+
+    bottom: 20px;
+
+    left: 25px;
+}
+
+
+.bottom-right {
+
+    bottom: 20px;
+
+    right: 25px;
+}
+
+
+/* =========================
+   OCULTAR CARTA
+========================= */
+
+.hidden {
+
+    display: none;
+}
+
+
+/* =========================
+   ANIMACIÓN DE ENTRADA
+========================= */
+
+.carta.show {
+
+    animation: cartaEntrada 1.2s ease forwards;
+}
+
+
+@keyframes cartaEntrada {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.94) translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .paper {
+
+        width: 94%;
+
+        padding: 40px 22px;
+
+        min-height: auto;
+
+        margin-bottom: 20px;
+    }
+
+    .paper h2 {
+
+        font-size: 1.8rem;
+
+        margin-bottom: 25px;
+    }
+
+    .letter-content {
+
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+    .letter-content p {
+
+        margin-bottom: 20px;
+    }
+
+    .signature {
+
+        margin-top: 30px;
+
+        font-size: 1rem;
+    }
+
+}
+
+/* =========================
+   AVIÓN DE VIAJE
+========================= */
+
+.travel-plane {
+
+    position: fixed;
+
+    top: 15%;
+
+    left: -80px;
+
+    font-size: 1.8rem;
+
+    color: #f4f7fc;
+
+    opacity: 0.5;
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(147, 197, 253, 0.8)
+        );
+
+    animation: viajar 12s linear infinite;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes viajar {
+
+    from {
+        left: -80px;
+    }
+
+    to {
+        left: 110%;
+    }
+
+}
+
+/* =========================
+   LÍNEA DE LA CARTA
+========================= */
+
+.letter-line {
+
+    width: 120px;
+
+    height: 1px;
+
+    margin: -15px auto 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #3b82f6,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(59, 130, 246, 0.4);
+
+}
